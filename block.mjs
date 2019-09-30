@@ -1,6 +1,6 @@
-const crypt = require('crypto');
+import { createHash } from 'crypto';
 
-class Block {
+export default class Block {
 
     constructor(index = 0, previousHash = null, data = {amount: 1}, difficulty = 1) {
         this.index = index;
@@ -13,7 +13,7 @@ class Block {
     }
 
     generateHash() {
-        return crypt.createHash('sha256').update(this.index + this.previousHash + JSON.stringify(this.data) + this.timestamp + this.nonce).digest('hex');
+        return createHash('sha256').update(this.index + this.previousHash + JSON.stringify(this.data) + this.timestamp + this.nonce).digest('hex');
     }
 
     mine() {
@@ -25,5 +25,3 @@ class Block {
     }
 
 }
-
-module.exports = Block;

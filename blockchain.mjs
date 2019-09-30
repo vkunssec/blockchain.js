@@ -1,6 +1,6 @@
-const Block = require('./block');
+import Block from './block.mjs';
 
-class Blockchain {
+export default class Blockchain {
 
     constructor(difficulty = 1) {
         this.blocks = [new Block()];
@@ -44,5 +44,3 @@ class Blockchain {
     }
 
 }
-
-module.exports = Blockchain;

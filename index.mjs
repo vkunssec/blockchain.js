@@ -1,4 +1,4 @@
-const Blockchain = require('./blockchain');
+import Blockchain from './blockchain.mjs';
 
 var blockchain = new Blockchain();
 
